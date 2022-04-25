@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org" >
+<head>
+<meta charset="ISO-8859-1" content="text/html; charset=UTF-8" >
+<title>Programación Orientada a Objetos</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+
+</head>
+<body>
+<header>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+ <h2> Bienvenido al Taller mecánico</h2>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link"  th:href="@{/auto/registrarAuto}"> Registro de Autos</a>
+      </li>
+      
+    </ul>
+  </div>
+</nav>
+</header>
+ <table  class="table table-hover" >
+	<thead class="thead-dark">
+		<tr>
+			<th>Placa</th>
+			<th>Numero de Motor</th>
+			<th>Modelo</th>
+			<th>IdCliente</th>
+		</tr>
+	</thead>
+	<tr th:each="tmpAuto:${auto}">
+	<td th:text="${tmpAuto.placa}"></td>
+	<td th:text="${tmpAuto.numeroMotor}"></td>
+	<td th:text="${tmpAuto.modelo}"></td>
+	<td th:text="${tmpAuto.Cliente}"></td>
+	
+	<td> <a th:href= "@{/auto/listadoAuto{id} (id=${tmpAuto.placa})}"
+	         
+	</tr>
+	</table>
+ 
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js" integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J" crossorigin="anonymous"></script>
+</body>
+
+</html>
